@@ -99,7 +99,7 @@ function solicitudAJAX() {
       objXMLHttpRequest.open("GET", url);
       objXMLHttpRequest.send();
     } else {
-      alert("DEbe ingresar un numero de 1 a 20 para obtener un Pokemon valido");
+      alert("Debe ingresar un numero de 1 a 20 para obtener un Pokemon valido");
     }
   }
   
