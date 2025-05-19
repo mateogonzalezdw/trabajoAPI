@@ -23,3 +23,17 @@ body {
     width: 100%;
     text-align: center;
   }
+
+#nombreP{
+    width: 20%;
+    color: white;
+    background-color: rgb(226, 43, 43);
+    border-color: rgb(143, 0, 0);
+}
+
+#buscar{
+      background-color: rgb(226, 43, 43);
+    color: white;
+    border-color: rgb(143, 0, 0);
+    width: 20%;
+}
