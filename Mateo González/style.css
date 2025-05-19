@@ -20,6 +20,6 @@ body {
     font-style:italic;
     background-color: rgb(226, 43, 43);
     color: white;
-   padding-left: 100%;
-   padding-right: 100%;
+    width: 100%;
+    text-align: center;
   }
