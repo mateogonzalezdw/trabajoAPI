@@ -11,3 +11,15 @@ body {
     margin-top: 5%;
     margin-bottom: 5%;
   }
+
+
+
+  
+#divP{
+    font-size: 70px;
+    font-style:italic;
+    background-color: rgb(226, 43, 43);
+    color: white;
+   padding-left: 100%;
+   padding-right: 100%;
+  }
