@@ -2,6 +2,10 @@ body {
     background-color : rgb(133, 188, 214)
   }
 
+#pokebola{
+ width: 180px;
+ 
+}
 
 #pokedex{
     font-size: 100px;
@@ -18,7 +22,7 @@ body {
 }
 
 #buscar{
-      background-color: rgb(226, 43, 43);
+    background-color: rgb(226, 43, 43);
     color: white;
     border-color: rgb(143, 0, 0);
 }
