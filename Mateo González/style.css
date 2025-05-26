@@ -1,10 +1,19 @@
-body {
-    background-color : rgb(133, 188, 214)
-  }
+body{
+  margin: 0;
+  padding: 0;
+  background-color : rgb(133, 188, 214)
+}
+
+header{
+  background-color : rgb(37, 152, 206);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+}
 
 #pokebola{
- width: 180px;
- 
+ width: 160px;
 }
 
 #pokedex{
@@ -12,17 +21,23 @@ body {
     font-style:italic;
     color: white;
     margin: 0%;
-    padding-left: 30px;
+    padding-left: 20px;
   }
 
 #nombreP{
     color: white;
-    background-color: rgb(226, 43, 43);
-    border-color: rgb(143, 0, 0);
-}
+    background-color: rgb(133, 188, 214);
+    border-color: rgb(37, 152, 206);
+    width: 300px;
+    height: 75px;
+  }
 
 #buscar{
     background-color: rgb(226, 43, 43);
     color: white;
     border-color: rgb(143, 0, 0);
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    font-size: 30px;
 }
