@@ -4,40 +4,60 @@ body{
   background-color : rgb(133, 188, 214)
 }
 
+#bory{
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+}
+
 header{
   background-color : rgb(37, 152, 206);
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 #pokebola{
- width: 160px;
+ margin-left: 30px;
+ margin-top: 12px;
+ width: 90px;
+ height: 90px;
 }
 
-#pokedex{
-    font-size: 100px;
-    font-style:italic;
-    color: white;
-    margin: 0%;
-    padding-left: 20px;
-  }
+#pokebuscador{
+  font-size: 100px;
+  font-style:italic;
+  color: white;
+  margin: 0%;
+  margin-left: 20px;
+}
 
 #nombreP{
-    color: white;
-    background-color: rgb(133, 188, 214);
-    border-color: rgb(37, 152, 206);
-    width: 300px;
-    height: 75px;
-  }
+  color: white;
+  background-color: rgb(133, 188, 214);
+  border-color: rgb(37, 152, 206);
+  width: 300px;
+  height: 50px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: 20px;
+}
 
 #buscar{
-    background-color: rgb(226, 43, 43);
-    color: white;
-    border-color: rgb(143, 0, 0);
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
-    font-size: 30px;
+  background-color: rgb(133, 188, 214);
+  color: white;
+  border-color: rgb(37, 152, 206);
+  border-radius: 50%;
+  height: 50px;
+  width: 120px;
+  font-size: 30px;
+  margin-right: 20px;
+  margin-top: 30px;
+  font-style:italic;
+}
+
+#masterball{
+  width: 300px;
+  margin-inline-start: auto;
+  margin-right: 250px;
 }
