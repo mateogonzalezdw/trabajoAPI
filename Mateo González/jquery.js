@@ -1,4 +1,3 @@
-
 var div2 = document.querySelector(".container");
 div2.addEventListener("click",ajaxSinJQuery)
 console.dir(div2);
