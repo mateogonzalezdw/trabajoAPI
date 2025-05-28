@@ -1,3 +1,4 @@
+
 function buscarPorNombre() {
     let nom = document.getElementById("nombreP").value;
     console.log(nom);
