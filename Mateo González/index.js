@@ -1,71 +1,42 @@
+async function buscarPorNombre() {
+  const nombre = document.getElementById("nombreP").value.toLowerCase();
+  const container = document.getElementById("conteiner");
+  container.innerHTML = "";
 
-function buscarPorNombre() {
-    let nom = document.getElementById("nombreP").value;
-    console.log(nom);
-    fetch("https://pokeapi.co/api/v2/pokemon/"+nom)
-    .then(res => res.json())
-    .then((json) => { 
-        console.dir(json)
-        let nombre = json.name;
-        let uriImg = json.sprites.other.home.front_default;
-        let div = document.querySelector("#ConteinerCard")
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
+    if (!res.ok) throw new Error("Pokémon no encontrado");
 
-        let html = `<div class="card" style="width: 18rem;">
-    <img src="` +
-            uriImg +
-            `" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">` +
-            nombre +
-            `</h5>
-      <p class="card-text"></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>`;
-  div.innerHTML = html;
-    })
-}
+    const data = await res.json();
 
+    const card = document.createElement("div");
+    card.className = "card";
 
+    const imagen = document.createElement("img");
+    imagen.src = data.sprites.front_default;
+    imagen.alt = data.name;
+    imagen.className = "pokemon-img";
 
-  function buscar() {
-    let tarjetas = document.querySelector("#ConteinerCard");
-    var data = document.querySelector("#nPokemon").data;
-    var busqueda = document.querySelector("#nPokemon").value - 1;
-    var url = data.results[busqueda].url;
-  
-    if (busqueda >= 0) {
-      var objXMLHttpRequest = new XMLHttpRequest();
-  
-      objXMLHttpRequest.onreadystatechange = function () {
-        if (objXMLHttpRequest.readyState === 4) {
-          if (objXMLHttpRequest.status === 200) {
-            let json = JSON.parse(objXMLHttpRequest.responseText);
-            let nombre = json.name;
-            let uriImg = json.sprites.other.home.front_default;
-            let html =
-              `<div class="card" style="width: 18rem;">
-    <img src="` +
-              uriImg +
-              `" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">` +
-              nombre +
-              `</h5>
-      <p class="card-text"></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>`;
-            tarjetas.innerHTML = html;
-          } else {
-            alert("Error Code: " + objXMLHttpRequest.status);
-            alert("Error Message: " + objXMLHttpRequest.statusText);
-          }
-        }
-      };
-      objXMLHttpRequest.open("GET", url);
-      objXMLHttpRequest.send();
-    } else {
-      alert("Debe ingresar un numero de 1 a 20 para obtener un Pokemon valido");
-    }
+    const nombreLink = document.createElement("a");
+    nombreLink.href = `https://www.pokemon.com/es/pokedex/${data.name}`;
+    nombreLink.target = "_blank";
+    nombreLink.className = "pokemon-name";
+    nombreLink.textContent = data.name.toUpperCase();
+
+    const stats = document.createElement("ul");
+    stats.className = "stats";
+    data.stats.forEach(stat => {
+      const li = document.createElement("li");
+      li.textContent = `${stat.stat.name}: ${stat.base_stat}`;
+      stats.appendChild(li);
+    });
+
+    card.appendChild(imagen);
+    card.appendChild(nombreLink);
+    card.appendChild(stats);
+    container.appendChild(card);
+
+  } catch (error) {
+    container.innerHTML = `<p class="error">${error.message}</p>`;
   }
+}

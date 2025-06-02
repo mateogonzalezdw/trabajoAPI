@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Pokedex</title>
     <link rel="stylesheet" href="style.css" />
-         
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   </head>
-<header>
-  <p id="pokebuscador">POKEBUSCADOR</p> 
-  <img id="pokebola"src="pokebola.png">
-  <input id="nombreP"
-        type="text"
-        placeholder="Ingresá el nombre del Pokemon"
-        data=""
-      />
-            <button onclick="buscarPorNombre()" id="buscar">
-        Buscar
-      </button>
-</header>
-  <body> 
-    <div id="bory">
-      <div id="ConteinerCard"></div>
-      <script src="index.js"></script>
-      <img id="masterball"src="masterball.png">
-    </div>       
-    
+  <body>
+    <header>
+      <div id="logo">
+        <h1 id="pokebrowse">POKEBROWSE</h1>
+        <img id="pokebola" src="pokebola.png" alt="Pokebola" />
+      </div>
+      <div id="buscador">
+        <input id="nombreP" type="text" placeholder="Nombre del Pokémon" />
+        <button onclick="buscarPorNombre()" id="buscar">Buscar</button>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <div id="conteiner"></div>
+      <img id="masterball" src="masterball.png" alt="Masterball" />
+    </main>
+
+    <script src="index.js"></script>
   </body>
 </html>

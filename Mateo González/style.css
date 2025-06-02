@@ -1,63 +1,131 @@
-body{
+body {
   margin: 0;
-  padding: 0;
-  background-color : rgb(133, 188, 214)
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, #a0d2eb, #ffffff);
+  color: #333;
 }
 
-#bory{
-  margin-top: 200px;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #268edb;
+  padding: 16px 32px;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#pokebrowse {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  order: 1;
+  text-align: right;
+}
+
+#pokebola {
+  width: 60px;
+  order: 2;
+}
+
+#buscador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#nombreP {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+}
+
+#buscar {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: white;
+  color: #268edb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#buscar:hover {
+  background-color: #ddd;
+}
+
+#contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  flex-wrap: wrap;
+}
+
+#conteiner {
+  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-header{
-  background-color : rgb(37, 152, 206);
-  display: flex;
-  padding-top: 15px;
-  padding-bottom: 15px;
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 32px;
+  max-width: 400px;
+  text-align: center;
+  animation: aparecer 0.8s ease-in-out;
 }
 
-#pokebola{
- margin-left: 30px;
- margin-top: 12px;
- width: 90px;
- height: 90px;
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-#pokebuscador{
-  font-size: 100px;
-  font-style:italic;
-  color: white;
-  margin: 0%;
-  margin-left: 20px;
+.pokemon-img {
+  width: 200px;
+  height: auto;
 }
 
-#nombreP{
-  color: white;
-  background-color: rgb(133, 188, 214);
-  border-color: rgb(37, 152, 206);
-  width: 300px;
-  height: 50px;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: 20px;
+.pokemon-name {
+  font-size: 32px;
+  margin: 16px 0;
+  color: #268edb;
+  text-decoration: none;
 }
 
-#buscar{
-  background-color: rgb(133, 188, 214);
-  color: white;
-  border-color: rgb(37, 152, 206);
-  border-radius: 50%;
-  height: 50px;
-  width: 120px;
-  font-size: 30px;
-  margin-right: 20px;
-  margin-top: 30px;
-  font-style:italic;
+.pokemon-name:hover {
+  text-decoration: underline;
 }
 
-#masterball{
-  width: 300px;
-  margin-inline-start: auto;
-  margin-right: 250px;
+.stats {
+  list-style: none;
+  padding: 0;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+#masterball {
+  width: 200px;
+  margin-left: 32px;
 }
