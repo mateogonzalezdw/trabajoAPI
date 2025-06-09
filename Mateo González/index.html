@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokedex</title>
+    <title>POKEBROWSE</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   </head>
@@ -14,14 +14,19 @@
         <img id="pokebola" src="pokebola.png" alt="Pokebola" />
       </div>
       <div id="buscador">
-        <input id="nombreP" type="text" placeholder="Nombre del Pokémon" />
-        <button onclick="buscarPorNombre()" id="buscar">Buscar</button>
-      </div>
+  <input id="nombreP" type="text" placeholder="Nombre del Pokémon" />
+  <img id="masterball" src="masterball.png" alt="Buscar Pokémon" style="cursor:pointer;" />
+</div>
     </header>
 
     <main id="contenido">
+      <section id="todos-container">
+  <h2>Todos los Pokémon</h2>
+  <div id="todos-lista"></div>
+</section>
+
       <div id="conteiner"></div>
-      <img id="masterball" src="masterball.png" alt="Masterball" />
+      
     </main>
 
     <script src="index.js"></script>
