@@ -2,12 +2,7 @@ async function buscarPorNombre() {
   const nombre = document.getElementById("nombreP").value.trim().toLowerCase();
   const container = document.getElementById("conteiner");
   container.innerHTML = '<div class="loader">Cargando...</div>';
-
-  if (!nombre) {
-    container.innerHTML = `<p class="error">Por favor, ingresa un nombre de Pokémon.</p>`;
-    return;
-  }
-
+ 
   try {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
     if (!res.ok) throw new Error("Pokémon no encontrado");
@@ -45,7 +40,6 @@ async function buscarPorNombre() {
       stats.appendChild(li);
     });
 
-    // Detalles extra: tipo, altura, peso, habilidades, experiencia base, orden, id
     const detallesExtra = document.createElement("ul");
     detallesExtra.classList.add("stats");
 
@@ -106,7 +100,6 @@ async function buscarPorNombre() {
       <p class="evo-name">${evoName.toUpperCase()}</p>
     `;
 
-    // Aquí agregamos el event listener para que haga la búsqueda al hacer click
     evoCard.addEventListener('click', () => {
       document.getElementById("nombreP").value = evoName;
       buscarPorNombre();
@@ -144,7 +137,7 @@ async function buscarPorNombre() {
 
 document.getElementById('masterball').addEventListener('click', buscarPorNombre);
 
-async function cargarTodosLosPokemones(limit = 1024) {
+async function cargarTodosLosPokemones(limit = 1025) {
   const contenedor = document.getElementById('todos-lista');
   contenedor.innerHTML = '';
 
@@ -177,4 +170,3 @@ async function cargarTodosLosPokemones(limit = 1024) {
 window.addEventListener('DOMContentLoaded', () => {
   cargarTodosLosPokemones();
 });
-
